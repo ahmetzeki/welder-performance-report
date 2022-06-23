@@ -362,10 +362,10 @@ def extract_control_result(status_rt, status_ut):
 
 
 def order_columns(df):
-    order = ['ISO+JOINT', 'ISO', 'SPOOL 1', 'F/S', 'WJ No', 'WJ TYPE', 'SCH', 'F/N',
-             'WELDING VT RESULT', 'welding date', 'WELDER ID 1', 'WELDER ID 2', 'WELDER ID 3',
+    order = ['ISO','WJ No','F/S', 'welding date','WELDER ID 1', 'WELDER ID 2', 'WELDER ID 3',
+             'ISO+JOINT',  'WJ TYPE', 'SCH', 'F/N','WELDING VT RESULT',  
              'Area', 'PHASE', 'Material', 'WELDING method', 'INCH', 'THICKNESS', 'SHRES',
-             'report RT', 'status RT', 'date RT', 'report UT', 'status UT', 'date UT', 'actual control date',
+             'report RT', 'status RT', 'date RT', 'report UT', 'status UT', 'date UT', 'actual control date','SPOOL 1', 
 
              'DEFECT', 'Single Porosity (Aa)', 'Aligned Porosity (Ab)', 'Cluster Porosity (Ac)',
              'Single slag inclusion (Ba)', 'Aligned Slag Inclusion (Bb)', 'Cluster Slag Inclusion (Bc)',
@@ -541,10 +541,12 @@ def main():
         wright_ndt_result_to_excel(ndt_result)
         last_update_info.to_csv(os.path.join(WORK_DIR, 'script_files', '_last_info_update.csv'), index=False)
     else:
-        print('[-] All files up-to-date. Load data from NDT result table')
+        print('[-] All files up-to-date. Load data from NDT result table')   
         ndt_result = pd.read_csv(os.path.join(WORK_DIR, 'script_files', 'ndt_result.csv'), low_memory=False,
                                  parse_dates=['welding date'], date_parser=pd.to_datetime)
-        ndt_result['welding date'] = ndt_result['welding date'].apply(lambda x: x.date())
+        wright_ndt_result_to_excel(ndt_result)
+        ndt_result = order_columns(ndt_result)
+        ndt_result['welding date'] = ndt_result['welding date'].apply(lambda x: x.date())       
     print('[-] Welder statistic processing')
     welder_statistic = count_welder_statistic(ndt_result)
     wright_welder_statistic_to_excel(welder_statistic)
@@ -564,4 +566,4 @@ if __name__ == '__main__':
         print(traceback.format_exc())
         print(e)
     finally:
-        exit_with_message('Press Enter to exit   SER-xWMY-bnRF-ZDon2 ')
+        exit_with_message('Press Enter to exit   SER-xWMY-bnRF-ZDon2')
