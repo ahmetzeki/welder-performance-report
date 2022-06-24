@@ -363,9 +363,9 @@ def extract_control_result(status_rt, status_ut):
 
 def order_columns(df):
     order = ['ISO','WJ No','F/S', 'welding date','WELDER ID 1', 'WELDER ID 2', 'WELDER ID 3',
-             'ISO+JOINT',  'WJ TYPE', 'SCH', 'F/N','WELDING VT RESULT',  
-             'Area', 'PHASE', 'Material', 'WELDING method', 'INCH', 'THICKNESS', 'SHRES',
-             'report RT', 'status RT', 'date RT', 'report UT', 'status UT', 'date UT', 'actual control date','SPOOL 1', 
+             'actual control date','ISO+JOINT', 'report RT', 'status RT', 'date RT', 'report UT', 'status UT', 'date UT',
+             'WJ TYPE', 'SCH', 'F/N','WELDING VT RESULT', 'Area', 'PHASE', 'Material', 'WELDING method', 'INCH', 'THICKNESS', 'SHRES',
+              'SPOOL 1', 
 
              'DEFECT', 'Single Porosity (Aa)', 'Aligned Porosity (Ab)', 'Cluster Porosity (Ac)',
              'Single slag inclusion (Ba)', 'Aligned Slag Inclusion (Bb)', 'Cluster Slag Inclusion (Bc)',
