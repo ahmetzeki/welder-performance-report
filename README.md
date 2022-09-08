@@ -2,7 +2,7 @@
 
 Problem: High ratio of rejected joints in construction of Gas processing plant project
 
-##Solution
+## Solution
  
    1- Creation of ndt-result database to calculate welder performance: I get data about which joints the welder worked on from files ('New Joints' and 'Repair Joints'), next I get data from Ndt-Status file to see the status of the joint(if accepted or not), also I get type of defect data to see what kind of defect the welder made during the process of welding. Then, from Based-Tp file, I pull characteristics of joints such as type, thicness, inch, size and welding method. As a result i have all parameters of joint where the welder worked on and what kind of defects he made
 
