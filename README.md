@@ -10,6 +10,6 @@ Problem: High ratio of rejected joints in construction of Gas processing plant p
 
 # Libraries
 
-   Pandas
-   Numpy
+   Pandas,
+   Numpy,
    Openpyxl
