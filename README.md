@@ -3,10 +3,10 @@
 Problem: High ratio of rejected joints in construction of Gas processing plant project
  
 #  1- Creation of ndt-result database to calculate welder performance: 
-   I get data about which joints the welder worked on from files ('New Joints' and 'Repair Joints'), next I get data from Ndt-Status file to see the status of the joint(if accepted or not), also I get type of defect data to see what kind of defect the welder made during the process of welding. Then, from Based-Tp file, I pull characteristics of joints such as type, thicness, inch, size and welding method. As a result i have all parameters of joint where the welder worked on and what kind of defects he made
+   I obtain data about the joints the welder worked on from files called 'New Joints' and 'Repair Joints.' Next, I retrieve data from the 'Ndt-Status' file to determine the status of each joint (whether it was accepted or not). Additionally, I collect information on the type of defects made by the welder during the welding process. Then, from the 'Based-Tp' file, I extract joint characteristics, including type, thickness, inch, size, and welding method. As a result, I have all the parameters of the joints where the welder worked and the type of defects they made during the welding process.
 
 #  2- Welder performance generator: 
-   Once I have all data ready, I calculate the persentage of accepted joints for each welder according to joint's parameters. This info help us make decision which type of joint sould a welder work on and we increase effectivity this way.
+   Once I have all the data ready, I calculate the percentage of accepted joints for each welder based on the joint's parameters. This information helps us make decisions about which type of joint each welder should work on, leading to increased effectiveness. By analyzing the acceptance rates of different joint types for each welder, we can identify their strengths and assign them to tasks that match their skills, ultimately optimizing the welding process and improving overall efficiency.
 
 # Libraries
 
